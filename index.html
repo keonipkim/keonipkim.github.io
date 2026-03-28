@@ -62,11 +62,6 @@
             padding: 8px 12px; cursor: pointer; font-family: monospace;
         }
         
-        .now-playing {
-            margin: 3em 0; padding: 15px;
-            border: 1px dashed #444; background: rgba(0, 255, 157, 0.05);
-        }
-        
         form { margin-top: 3em; max-width: 500px; }
         input, textarea {
             width: 100%; padding: 10px; margin: 10px 0;
@@ -125,11 +120,6 @@
         </div>
     </div>
 
-    <div class="now-playing">
-        <strong>♪ Now Playing</strong><br>
-        <span id="now-playing-text">Nothing playing right now.<br><small>Add a Spotify embed later if you want.</small></span>
-    </div>
-
     <h2># Get in touch</h2>
     <form action="https://formspree.io/f/xlgogqlk" method="POST">
         <input type="text" name="name" placeholder="Your name" required>
@@ -140,4 +130,23 @@
     </form>
 
     <footer style="margin-top: 4em; font-size: 0.9rem; opacity: 0.6;">
-       
+        Stafford, Virginia • One HTML file • keonikim.com
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const toggleBtn = document.querySelector('.theme-toggle');
+            if (body.style.backgroundColor === 'rgb(255, 255, 255)' || body.style.backgroundColor === '') {
+                body.style.backgroundColor = '#0a0a0a';
+                body.style.color = '#ddd';
+                toggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                body.style.backgroundColor = '#fff';
+                body.style.color = '#111';
+                toggleBtn.textContent = '🌙 Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
