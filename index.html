@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keoni Kim</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #ddd;
+            --accent: #00ff9d;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--bg);
+            color: var(--text);
+            padding: 40px 20px;
+            max-width: 720px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        h1, h2 { font-weight: normal; margin: 1.2em 0 0.4em; }
+        h1 { font-size: 2.2rem; }
+        .title { color: var(--accent); font-size: 1.8rem; }
+        .roles { font-size: 1.3rem; margin: 1.5em 0; }
+        .roles span { display: block; margin: 0.4em 0; }
+        a { color: var(--accent); text-decoration: underline dotted; }
+        a:hover { color: #fff; }
+        
+        .theme-toggle {
+            position: fixed; top: 20px; right: 20px;
+            background: #222; color: #ddd; border: 1px solid #444;
+            padding: 8px 12px; cursor: pointer; font-family: monospace;
+        }
+        
+        .now-playing {
+            margin: 3em 0; padding: 15px;
+            border: 1px dashed #444; background: rgba(0, 255, 157, 0.05);
+        }
+        
+        form { margin-top: 3em; max-width: 500px; }
+        input, textarea {
+            width: 100%; padding: 10px; margin: 10px 0;
+            background: #111; border: 1px solid #444; color: #ddd;
+            font-family: monospace;
+        }
+        button {
+            background: var(--accent); color: #000; border: none;
+            padding: 12px 20px; cursor: pointer; font-weight: bold;
+        }
+        button:hover { background: #fff; }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
+
+    <h1 class="title"># Crummy Website</h1>
+    
+    <h1># Keoni Kim</h1>
+    
+    <div class="roles">
+        <span>Developer</span>
+        <span>Marine</span>
+        <span>Stafford, Virginia</span>
+    </div>
+    
+    <p class="bio">
+        Developer and former Marine based in Stafford, Virginia. 
+        Focused on building clean, impactful software with real-world application.
+    </p>
+
+    <p>
+        <a href="https://www.linkedin.com/in/keonikim" target="_blank">LinkedIn</a> • 
+        <a href="https://x.com/KeoniPKim" target="_blank">@KeoniPKim on X</a> • 
+        <a href="https://github.com/keonipkim" target="_blank">GitHub</a> • 
+        <a href="mailto:keoni@keonikim.com">keoni@keonikim.com</a>
+    </p>
+
+    <div class="now-playing">
+        <strong>♪ Now Playing</strong><br>
+        <span id="now-playing-text">Nothing playing right now.<br><small>Add a Spotify embed later if you want.</small></span>
+    </div>
+
+    <h2># Get in touch</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="_replyto" placeholder="Your email" required>
+        <textarea name="message" rows="6" placeholder="What's on your mind?" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+
+    <footer style="margin-top: 4em; font-size: 0.9rem; opacity: 0.6;">
+        Stafford, Virginia • One HTML file • keonikim.com
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const toggleBtn = document.querySelector('.theme-toggle');
+            if (body.style.backgroundColor === 'rgb(255, 255, 255)' || body.style.backgroundColor === '') {
+                body.style.backgroundColor = '#0a0a0a';
+                body.style.color = '#ddd';
+                toggleBtn.textContent = '☀️ Light Mode';
+            } else {
+                body.style.backgroundColor = '#fff';
+                body.style.color = '#111';
+                toggleBtn.textContent = '🌙 Dark Mode';
+            }
+        }
+    </script>
+</body>
+</html>
