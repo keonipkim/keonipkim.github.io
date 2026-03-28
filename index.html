@@ -20,10 +20,22 @@
             line-height: 1.7;
         }
         h1, h2 { font-weight: normal; margin: 1.2em 0 0.4em; }
-        h1 { font-size: 2.2rem; }
-        .title { color: var(--accent); font-size: 1.8rem; }
-        .roles { font-size: 1.3rem; margin: 1.5em 0; }
-        .roles span { display: block; margin: 0.4em 0; }
+        h1 { font-size: 2.4rem; }
+        .tagline { 
+            font-size: 1.35rem; 
+            color: var(--accent); 
+            margin-top: -0.8em;
+            margin-bottom: 1.8em;
+        }
+        .roles { 
+            font-size: 1.25rem; 
+            margin: 1.5em 0; 
+            color: #aaa;
+        }
+        .roles span { 
+            display: block; 
+            margin: 0.3em 0; 
+        }
         a { color: var(--accent); text-decoration: underline dotted; }
         a:hover { color: #fff; }
         
@@ -54,19 +66,19 @@
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
 
-    <h1 class="title"># Crummy Website</h1>
-    
     <h1># Keoni Kim</h1>
     
+    <p class="tagline">Developer / Data Analyst / Data Engineer</p>
+    
     <div class="roles">
-        <span>Developer</span>
-        <span>Marine</span>
+        <span>Former Marine</span>
         <span>Stafford, Virginia</span>
     </div>
     
     <p class="bio">
-        Developer and former Marine based in Stafford, Virginia. 
-        Focused on building clean, impactful software with real-world application.
+        Data Engineer focused on Python, SQL, and building robust data pipelines. 
+        Former Marine with deep experience in military personnel systems, 
+        large-scale data validation, and turning complex data into actionable insights.
     </p>
 
     <p>
