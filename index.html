@@ -9,35 +9,55 @@
             --bg: #0a0a0a;
             --text: #ddd;
             --accent: #00ff9d;
+            --accent-dark: #00cc7a;
+            --border: #333;
         }
         body {
             font-family: 'Courier New', monospace;
             background: var(--bg);
             color: var(--text);
             padding: 40px 20px;
-            max-width: 720px;
+            max-width: 800px;
             margin: 0 auto;
             line-height: 1.7;
         }
         h1, h2 { font-weight: normal; margin: 1.2em 0 0.4em; }
         h1 { font-size: 2.4rem; }
-        .tagline { 
-            font-size: 1.35rem; 
-            color: var(--accent); 
+        .tagline {
+            font-size: 1.35rem;
+            color: var(--accent);
             margin-top: -0.8em;
             margin-bottom: 1.8em;
         }
-        .roles { 
-            font-size: 1.25rem; 
-            margin: 1.5em 0; 
+        .roles {
+            font-size: 1.25rem;
+            margin: 1.5em 0;
             color: #aaa;
         }
-        .roles span { 
-            display: block; 
-            margin: 0.3em 0; 
+        .roles span {
+            display: block;
+            margin: 0.3em 0;
         }
         a { color: var(--accent); text-decoration: underline dotted; }
         a:hover { color: #fff; }
+
+        .profile-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2em;
+            gap: 20px;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .profile-content {
+            flex: 1;
+        }
 
         .projects {
             margin-top: 3em;
@@ -45,7 +65,7 @@
         .project {
             margin-bottom: 2em;
             padding-bottom: 1.5em;
-            border-bottom: 1px dashed #444;
+            border-bottom: 1px dashed var(--border);
         }
         .project:last-child {
             border-bottom: none;
@@ -55,81 +75,125 @@
             margin: 0 0 0.5em 0;
             color: var(--accent);
         }
-        
+
         .theme-toggle {
             position: fixed; top: 20px; right: 20px;
             background: #222; color: #ddd; border: 1px solid #444;
             padding: 8px 12px; cursor: pointer; font-family: monospace;
+            border-radius: 4px;
         }
-        
+
         form { margin-top: 3em; max-width: 500px; }
         input, textarea {
-            width: 100%; padding: 10px; margin: 10px 0;
+            width: 100%; padding: 12px; margin: 10px 0;
             background: #111; border: 1px solid #444; color: #ddd;
             font-family: monospace;
+            border-radius: 4px;
         }
         button {
             background: var(--accent); color: #000; border: none;
             padding: 12px 20px; cursor: pointer; font-weight: bold;
+            border-radius: 4px;
         }
-        button:hover { background: #fff; }
+        button:hover { background: var(--accent-dark); }
+
+        .section-title {
+            position: relative;
+            padding-left: 20px;
+            margin-top: 2em;
+            margin-bottom: 1.5em;
+        }
+        .section-title::before {
+            content: "#";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .bio {
+            margin: 1.5em 0;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            margin: 1.5em 0;
+            font-size: 1.1rem;
+        }
+
+        .social-links a {
+            margin-right: 15px;
+            display: inline-block;
+        }
+
+        footer {
+            margin-top: 4em;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">☀️ Light Mode</button>
 
-    <h1># Keoni Kim</h1>
-    
-    <p class="tagline">Developer / Data Analyst / Data Engineer</p>
-    
-    <div class="roles">
-        <span>Former Marine</span>
-        <span>Stafford, Virginia</span>
-    </div>
-    
-    <p class="bio">
-        Data Engineer focused on Python, SQL, and building robust data pipelines. 
-        Former Marine with deep experience in military personnel systems, 
-        large-scale data validation, and turning complex data into actionable insights.
-    </p>
+    <div class="profile-container">
+        <img src="https://avatars.githubusercontent.com/u/12345678?v=4" alt="Keoni Kim" class="profile-pic" onerror="this.style.display='none';">
+        <div class="profile-content">
+            <h1># Keoni Kim</h1>
 
-    <p>
-        <a href="https://www.linkedin.com/in/keonikim" target="_blank">LinkedIn</a> • 
-        <a href="https://x.com/KeoniPKim" target="_blank">@KeoniPKim on X</a> • 
-        <a href="https://github.com/keonipkim" target="_blank">GitHub</a> • 
-        <a href="mailto:keoni@keonikim.com">keoni@keonikim.com</a>
-    </p>
+            <p class="tagline">Developer / Data Analyst / Data Engineer</p>
+
+            <div class="roles">
+                <span>Former Marine</span>
+                <span>Stafford, Virginia</span>
+            </div>
+
+            <p class="bio">
+                Data Engineer focused on Python, SQL, and building robust data pipelines.
+                Former Marine with deep experience in military personnel systems,
+                large-scale data validation, and turning complex data into actionable insights.
+            </p>
+
+            <p class="social-links">
+                <a href="https://www.linkedin.com/in/keonikim" target="_blank">LinkedIn</a> •
+                <a href="https://x.com/KeoniPKim" target="_blank">@KeoniPKim on X</a> •
+                <a href="https://github.com/keonipkim" target="_blank">GitHub</a> •
+                <a href="mailto:keoni@keonikim.com">keoni@keonikim.com</a>
+            </p>
+        </div>
+    </div>
 
     <!-- Projects Section -->
     <div class="projects">
-        <h2># Projects</h2>
-        
+        <h2 class="section-title">Projects</h2>
+
         <div class="project">
             <h3>Military Personnel Data Pipeline</h3>
             <p>Built automated ETL pipelines using Python and SQL to validate and process large-scale military HR data. Improved data accuracy and reduced manual processing time significantly.</p>
         </div>
-        
+
         <div class="project">
             <h3>Power BI Analytics Dashboard</h3>
             <p>Developed interactive dashboards for leadership to track personnel metrics, compliance, and readiness using Power BI and SQL Server.</p>
         </div>
-        
+
         <div class="project">
             <h3>Data Validation & Compliance Tool</h3>
             <p>Created Python scripts for automated data quality checks and compliance reporting across multiple personnel systems.</p>
         </div>
     </div>
 
-    <h2># Get in touch</h2>
+    <h2 class="section-title">Get in touch</h2>
     <form action="https://formspree.io/f/xlgogqlk" method="POST">
         <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="_replyto" placeholder="Your email" required>
+        <input type type="email" name="_replyto" placeholder="Your email" required>
         <textarea name="message" rows="6" placeholder="What's on your mind?" required></textarea>
         <input type="text" name="_gotcha" style="display:none;">
         <button type="submit">Send Message</button>
     </form>
 
-    <footer style="margin-top: 4em; font-size: 0.9rem; opacity: 0.6;">
+    <footer>
         Stafford, Virginia • One HTML file • keonikim.com
     </footer>
 
